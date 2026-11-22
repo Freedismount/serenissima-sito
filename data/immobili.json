@@ -1,132 +1,169 @@
 {
   "immobili": [
     {
-      "titolo": "Airone 51",
-      "sottotitolo": "Attico fronte mare al 13° piano",
-      "tipo": "affitto",
-      "zona": "Piazza Marina",
-      "fronte_mare": true,
       "posti_letto": 5,
+      "bagni": 2,
+      "foto": [
+        "https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-airone-51-fronte-mare-al-13-piano-jesolo-piazza-marina-11-55-56.jpg",
+        "img/uploads/img_8802.jpg"
+      ],
+      "mq": "",
+      "sottotitolo": "Attico fronte mare al 13° piano",
+      "caratteristiche": [
+        "Terrazza vista mare",
+        "Servizio spiaggia"
+      ],
+      "zona": "Piazza Marina",
       "camere": 3,
-      "bagni": 2,
-      "mq": "",
+      "visibile": true,
+      "fronte_mare": true,
       "prezzo": "Prezzo su richiesta",
-      "caratteristiche": ["Terrazza vista mare", "Servizio spiaggia"],
       "descrizione": "Attico fronte mare al 13° piano in Piazza Marina, con terrazza vista mare.\nServizio spiaggia incluso.",
-      "foto": ["https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-airone-51-fronte-mare-al-13-piano-jesolo-piazza-marina-11-55-56.jpg"],
-      "visibile": true
+      "titolo": "Airone 51",
+      "tipo": "affitto"
     },
     {
-      "titolo": "Residence VeraCruz R5",
-      "sottotitolo": "Trilocale con piscina",
-      "tipo": "affitto",
-      "zona": "Jesolo Lido",
-      "fronte_mare": false,
       "posti_letto": "",
-      "camere": 2,
       "bagni": 2,
+      "foto": [
+        "https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-residence-veracruz-jesolo-r5-9-41-57.jpg"
+      ],
       "mq": "",
-      "prezzo": "Prezzo su richiesta",
-      "caratteristiche": ["Trilocale", "Doppi servizi", "Piscina"],
-      "descrizione": "Trilocale con doppi servizi in residence con piscina.",
-      "foto": ["https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-residence-veracruz-jesolo-r5-9-41-57.jpg"],
-      "visibile": true
-    },
-    {
-      "titolo": "Airone 13",
-      "sottotitolo": "Appartamento fronte mare",
-      "tipo": "affitto",
-      "zona": "Piazza Marina",
-      "fronte_mare": true,
-      "posti_letto": "",
-      "camere": "",
-      "bagni": "",
-      "mq": "",
-      "prezzo": "Prezzo su richiesta",
-      "caratteristiche": [],
-      "descrizione": "Appartamento fronte mare in Piazza Marina.",
-      "foto": ["https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-airone-13-frontemare-jesolo-piazza-marina-8-23-08.jpg"],
-      "visibile": true
-    },
-    {
-      "titolo": "Airone 54",
-      "sottotitolo": "Fronte mare al piano terra",
-      "tipo": "affitto",
-      "zona": "Piazza Marina",
-      "fronte_mare": true,
-      "posti_letto": "",
-      "camere": "",
-      "bagni": "",
-      "mq": "",
-      "prezzo": "Prezzo su richiesta",
-      "caratteristiche": ["Piano terra"],
-      "descrizione": "Appartamento fronte mare al piano terra in Piazza Marina.",
-      "foto": ["https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-airone-54-frontemare-piano-terra-piazza-marina-4-21-15.jpg"],
-      "visibile": true
-    },
-    {
-      "titolo": "Airone 28",
-      "sottotitolo": "Appartamento in Piazza Marina",
-      "tipo": "affitto",
-      "zona": "Piazza Marina",
-      "fronte_mare": false,
-      "posti_letto": "",
-      "camere": "",
-      "bagni": "",
-      "mq": "",
-      "prezzo": "Prezzo su richiesta",
-      "caratteristiche": [],
-      "descrizione": "Appartamento in Piazza Marina.",
-      "foto": ["https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-airone-28-jesolo-piazza-marina-1-14-15.jpg"],
-      "visibile": true
-    },
-    {
-      "titolo": "Alberti Palace · Tipo A",
-      "sottotitolo": "Nuova costruzione",
-      "tipo": "vendita",
-      "zona": "Piazza Aurora",
-      "fronte_mare": false,
-      "posti_letto": "",
-      "camere": "",
-      "bagni": "",
-      "mq": "",
-      "prezzo": "Prezzo su richiesta",
-      "caratteristiche": ["Classe A4", "Piscina a sfioro", "Ampie terrazze"],
-      "descrizione": "Appartamento di nuova costruzione nella residenza Alberti Palace, Piazza Aurora.\nClasse energetica A4, piscina a sfioro con solarium, ampie terrazze.",
-      "foto": ["https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-vendite-alberti-palace-jesolo-piazza-aurora-piano-tipo-a-8-09-00.jpg"],
-      "visibile": true
-    },
-    {
-      "titolo": "Alberti Palace · Tipo C",
-      "sottotitolo": "Nuova costruzione",
-      "tipo": "vendita",
-      "zona": "Piazza Aurora",
-      "fronte_mare": false,
-      "posti_letto": "",
-      "camere": "",
-      "bagni": "",
-      "mq": "",
-      "prezzo": "Prezzo su richiesta",
-      "caratteristiche": ["Classe A4", "Piscina a sfioro", "Ampie terrazze"],
-      "descrizione": "Appartamento di nuova costruzione nella residenza Alberti Palace, Piazza Aurora.\nClasse energetica A4, piscina a sfioro con solarium, ampie terrazze.",
-      "foto": ["https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-vendite-alberti-palace-tipo-c-jesolo-piazza-aurora-2-47-34.jpg"],
-      "visibile": true
-    },
-    {
-      "titolo": "Snack Bar Caffetteria & Drinks",
-      "sottotitolo": "Bar a Jesolo Lido",
-      "tipo": "attivita",
+      "sottotitolo": "Trilocale con piscina",
+      "caratteristiche": [
+        "Trilocale",
+        "Doppi servizi",
+        "Piscina"
+      ],
       "zona": "Jesolo Lido",
+      "camere": 2,
+      "visibile": true,
       "fronte_mare": false,
-      "posti_letto": "",
-      "camere": "",
-      "bagni": "",
-      "mq": "",
       "prezzo": "Prezzo su richiesta",
-      "caratteristiche": ["Attività commerciale", "Bar"],
+      "descrizione": "Trilocale con doppi servizi in residence con piscina.",
+      "titolo": "Residence VeraCruz R5",
+      "tipo": "affitto"
+    },
+    {
+      "posti_letto": "",
+      "bagni": "",
+      "foto": [
+        "https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-airone-13-frontemare-jesolo-piazza-marina-8-23-08.jpg"
+      ],
+      "mq": "",
+      "sottotitolo": "Appartamento fronte mare",
+      "caratteristiche": [],
+      "zona": "Piazza Marina",
+      "camere": "",
+      "visibile": true,
+      "fronte_mare": true,
+      "prezzo": "Prezzo su richiesta",
+      "descrizione": "Appartamento fronte mare in Piazza Marina.",
+      "titolo": "Airone 13",
+      "tipo": "affitto"
+    },
+    {
+      "posti_letto": "",
+      "bagni": "",
+      "foto": [
+        "https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-airone-54-frontemare-piano-terra-piazza-marina-4-21-15.jpg"
+      ],
+      "mq": "",
+      "sottotitolo": "Fronte mare al piano terra",
+      "caratteristiche": [
+        "Piano terra"
+      ],
+      "zona": "Piazza Marina",
+      "camere": "",
+      "visibile": true,
+      "fronte_mare": true,
+      "prezzo": "Prezzo su richiesta",
+      "descrizione": "Appartamento fronte mare al piano terra in Piazza Marina.",
+      "titolo": "Airone 54",
+      "tipo": "affitto"
+    },
+    {
+      "posti_letto": "",
+      "bagni": "",
+      "foto": [
+        "https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-affitti-airone-28-jesolo-piazza-marina-1-14-15.jpg"
+      ],
+      "mq": "",
+      "sottotitolo": "Appartamento in Piazza Marina",
+      "caratteristiche": [],
+      "zona": "Piazza Marina",
+      "camere": "",
+      "visibile": true,
+      "fronte_mare": false,
+      "prezzo": "Prezzo su richiesta",
+      "descrizione": "Appartamento in Piazza Marina.",
+      "titolo": "Airone 28",
+      "tipo": "affitto"
+    },
+    {
+      "posti_letto": "",
+      "bagni": "",
+      "foto": [
+        "https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-vendite-alberti-palace-jesolo-piazza-aurora-piano-tipo-a-8-09-00.jpg"
+      ],
+      "mq": "",
+      "sottotitolo": "Nuova costruzione",
+      "caratteristiche": [
+        "Classe A4",
+        "Piscina a sfioro",
+        "Ampie terrazze"
+      ],
+      "zona": "Piazza Aurora",
+      "camere": "",
+      "visibile": true,
+      "fronte_mare": false,
+      "prezzo": "Prezzo su richiesta",
+      "descrizione": "Appartamento di nuova costruzione nella residenza Alberti Palace, Piazza Aurora.\nClasse energetica A4, piscina a sfioro con solarium, ampie terrazze.",
+      "titolo": "Alberti Palace · Tipo A",
+      "tipo": "vendita"
+    },
+    {
+      "posti_letto": "",
+      "bagni": "",
+      "foto": [
+        "https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-vendite-alberti-palace-tipo-c-jesolo-piazza-aurora-2-47-34.jpg"
+      ],
+      "mq": "",
+      "sottotitolo": "Nuova costruzione",
+      "caratteristiche": [
+        "Classe A4",
+        "Piscina a sfioro",
+        "Ampie terrazze"
+      ],
+      "zona": "Piazza Aurora",
+      "camere": "",
+      "visibile": true,
+      "fronte_mare": false,
+      "prezzo": "Prezzo su richiesta",
+      "descrizione": "Appartamento di nuova costruzione nella residenza Alberti Palace, Piazza Aurora.\nClasse energetica A4, piscina a sfioro con solarium, ampie terrazze.",
+      "titolo": "Alberti Palace · Tipo C",
+      "tipo": "vendita"
+    },
+    {
+      "posti_letto": "",
+      "bagni": "",
+      "foto": [
+        "https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-vendite-snack-bar-caffetteria-and-drinks-9-19-58.jpg"
+      ],
+      "mq": "",
+      "sottotitolo": "Bar a Jesolo Lido",
+      "caratteristiche": [
+        "Attività commerciale",
+        "Bar"
+      ],
+      "zona": "Jesolo Lido",
+      "camere": "",
+      "visibile": true,
+      "fronte_mare": false,
+      "prezzo": "Prezzo su richiesta",
       "descrizione": "Cessione di attività: snack bar, caffetteria e drinks a Jesolo Lido.",
-      "foto": ["https://www.serenissimaonline.it/catalogo/web/media/cache/img_large/uploads/gallery/appartamenti-vendite-snack-bar-caffetteria-and-drinks-9-19-58.jpg"],
-      "visibile": true
+      "titolo": "Snack Bar Caffetteria & Drinks",
+      "tipo": "attivita"
     }
   ]
 }
