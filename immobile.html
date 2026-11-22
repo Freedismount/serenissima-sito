@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immobile · Serenissima Immobiliare Jesolo Lido</title>
+<meta name="description" content="Scheda immobile Serenissima Immobiliare, Jesolo Lido.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div id="cornice-top"></div>
+
+<main class="detail"><div class="wrap" id="scheda"><div class="loading">Caricamento…</div></div></main>
+
+<div class="lb" id="lb">
+  <button class="x" aria-label="Chiudi">✕</button>
+  <button class="pv" aria-label="Foto precedente">‹</button>
+  <img alt="">
+  <button class="nx" aria-label="Foto successiva">›</button>
+  <div class="cnt"></div>
+</div>
+
+<div id="cornice-bottom"></div>
+
+<script src="assets/common.js"></script>
+<script>
+(async function () {
+  const box = document.getElementById("scheda");
+  let A, L;
+  try { ({ agenzia: A, immobili: L } = await caricaDati()); }
+  catch (e) { box.innerHTML = '<div class="notfound"><h1>Errore di caricamento</h1><p>Riprova tra poco.</p></div>'; return; }
+  disegnaCornice(A, false);
+
+  const id = new URLSearchParams(location.search).get("id");
+  const i = L.find(x => x.id === id);
+  if (!i) {
+    box.innerHTML = `<div class="notfound">
+      <h1>Immobile non disponibile</h1>
+      <p class="lead" style="margin:0 auto 30px">Questo immobile non è più online. Guarda gli altri o contattaci: abbiamo altre disponibilità in agenzia.</p>
+      <a class="btn btn-navy" href="index.html#immobili">Vedi tutti gli immobili</a></div>`;
+    return;
+  }
+
+  document.title = i.titolo + " · " + TIPI[i.tipo] + " a Jesolo · " + A.nome;
+  document.querySelector('meta[name="description"]').content =
+    (i.sottotitolo ? i.sottotitolo + ". " : "") + String(i.descrizione || "").slice(0, 140);
+
+  const F = i.foto;
+  const specs = [
+    [i.posti_letto, "Posti letto"], [i.camere, i.camere == 1 ? "Camera" : "Camere"],
+    [i.bagni, i.bagni == 1 ? "Bagno" : "Bagni"], [i.mq ? i.mq + " m²" : "", "Superficie"],
+    [i.fronte_mare ? "Sì" : "", "Fronte mare"]
+  ].filter(s => s[0] !== "" && s[0] != null && s[0] !== 0);
+
+  const oggetto = "Richiesta informazioni: " + i.titolo;
+  const corpo = `Buongiorno,\nvorrei ricevere informazioni su "${i.titolo}" (${TIPI[i.tipo]}).\n${location.href}\n\nNome:\nTelefono:\n`;
+
+  box.innerHTML = `
+    <a class="back" href="index.html?tipo=${i.tipo}#immobili">← Tutti gli immobili</a>
+    <div class="d-head">
+      <div>
+        <span class="eyebrow">${TIPI[i.tipo]} · Jesolo · ${esc(i.zona || "Jesolo Lido")}</span>
+        <h1>${esc(i.titolo)}</h1>
+        ${i.sottotitolo ? `<div class="sub">${esc(i.sottotitolo)}</div>` : ""}
+      </div>
+      <div class="d-price">${esc(i.prezzo || "Prezzo su richiesta")}</div>
+    </div>
+
+    ${F.length ? `
+    <div class="gallery ${F.length < 3 ? "one" : ""}">
+      <div class="main" data-i="0"><img src="${esc(F[0])}" alt="${esc(i.titolo)}" onerror="this.remove()"></div>
+      <div class="side">
+        ${F.slice(1, 3).map((f, k) => `<div data-i="${k + 1}"><img loading="lazy" src="${esc(f)}" alt="" onerror="this.remove()">
+          ${k === 1 && F.length > 3 ? `<span class="more">+${F.length - 3} foto</span>` : ""}</div>`).join("")}
+      </div>
+    </div>
+    ${F.length > 1 ? `<div class="thumbs">${F.map((f, k) => `<img loading="lazy" data-i="${k}" src="${esc(f)}" alt="Foto ${k + 1}" onerror="this.remove()">`).join("")}</div>` : ""}
+    ` : ""}
+
+    <div class="d-body">
+      <div>
+        ${specs.length ? `<div class="specs">${specs.map(s => `<div class="spec"><b>${esc(s[0])}</b><span>${s[1]}</span></div>`).join("")}</div>` : ""}
+        <div class="d-desc">
+          <h2>Descrizione</h2>
+          ${paragrafi(i.descrizione) || "<p>Contattaci per tutti i dettagli su questo immobile.</p>"}
+          ${i.caratteristiche.length ? `<div class="tags">${i.caratteristiche.map(c => `<span>${esc(c)}</span>`).join("")}</div>` : ""}
+        </div>
+      </div>
+      <aside class="d-box">
+        <h3>Ti interessa?</h3>
+        <p>Chiamaci o scrivici: ti rispondiamo il prima possibile.</p>
+        <a class="btn btn-navy" href="${telHref(A.telefono)}">☎ Chiama ${esc(A.telefono)}</a>
+        <a class="btn btn-line" href="mailto:${esc(A.email)}?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(corpo)}">✉ Scrivi un'email</a>
+        <small>${esc(A.orari_breve)}</small>
+      </aside>
+    </div>`;
+
+  /* ----- Foto a tutto schermo ----- */
+  const lb = document.getElementById("lb"), lbImg = lb.querySelector("img"), cnt = lb.querySelector(".cnt");
+  let cur = 0;
+  const show = k => { cur = (k + F.length) % F.length; lbImg.src = F[cur]; cnt.textContent = (cur + 1) + " / " + F.length; };
+  box.addEventListener("click", e => { const t = e.target.closest("[data-i]"); if (t) { show(+t.dataset.i); lb.classList.add("on"); } });
+  lb.querySelector(".x").onclick = () => lb.classList.remove("on");
+  lb.querySelector(".pv").onclick = () => show(cur - 1);
+  lb.querySelector(".nx").onclick = () => show(cur + 1);
+  lb.addEventListener("click", e => { if (e.target === lb) lb.classList.remove("on"); });
+  document.addEventListener("keydown", e => {
+    if (!lb.classList.contains("on")) return;
+    if (e.key === "Escape") lb.classList.remove("on");
+    if (e.key === "ArrowLeft") show(cur - 1);
+    if (e.key === "ArrowRight") show(cur + 1);
+  });
+  if (F.length < 2) lb.querySelectorAll(".pv,.nx").forEach(b => b.style.display = "none");
+})();
+</script>
+</body>
+</html>

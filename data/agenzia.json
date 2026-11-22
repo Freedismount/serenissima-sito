@@ -1,0 +1,34 @@
+{
+  "nome": "Serenissima Immobiliare",
+  "logo": "https://www.serenissimaonline.it/theme-inc/img/logo-serenissima-immobiliare.png",
+  "telefono": "+39 0421 371 124",
+  "email": "info@serenissimaonline.it",
+  "indirizzo": "Piazza Marina, 3 · 30016 Jesolo Lido (VE)",
+  "orari": "Martedì – Domenica: 9:00–12:30 · 15:30–19:00\nLunedì chiuso",
+  "orari_breve": "Mar–Dom 9:00–12:30 · 15:30–19:00 · Lunedì chiuso",
+  "avviso": "",
+  "piva": "02538940277",
+  "privacy_url": "https://www.serenissimaonline.it/it/chi-siamo/agenzia-immobiliare/informazioni-sulla-privacy",
+  "cookie_url": "https://www.serenissimaonline.it/it/chi-siamo/agenzia-immobiliare/cookie-policy",
+  "condizioni_affitto_url": "https://www.serenissimaonline.it/it/chi-siamo/condizioni-daffitto/condizioni-daffitto",
+  "newsletter_url": "https://www.serenissimaonline.it/it/contatti/newsletter/iscriviti",
+  "foto_copertina": [
+    "https://www.serenissimaonline.it/public/HOME-SLIDER/6A.jpg",
+    "https://www.serenissimaonline.it/public/HOME-SLIDER/Slide-home-2.jpg",
+    "https://www.serenissimaonline.it/public/HOME-SLIDER/Slide-home-3.jpg"
+  ],
+  "vetrina": {
+    "mostra": true,
+    "etichetta": "In vendita · Piazza Aurora",
+    "titolo": "Alberti Palace",
+    "testo": "Una nuova residenza a Jesolo Lido, progettata per chi cerca comfort, efficienza energetica e spazi all'aperto da vivere tutto l'anno.",
+    "foto": "https://www.serenissimaonline.it/public/HOME-SLIDER/6A.jpg",
+    "badge": "Nuova costruzione",
+    "punti": [
+      { "titolo": "20 unità", "testo": "Appartamenti di nuova costruzione" },
+      { "titolo": "Classe A4", "testo": "Massima efficienza energetica" },
+      { "titolo": "Piscina a sfioro", "testo": "Con solarium" },
+      { "titolo": "Ampie terrazze", "testo": "Detrazione fiscale Sismabonus fino a € 80.000" }
+    ]
+  }
+}

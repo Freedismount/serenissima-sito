@@ -1,0 +1,113 @@
+# Pannello di gestione del sito Serenissima Immobiliare (Decap CMS)
+# Tuo papà lo usa da: https://www.serenissimaonline.it/admin/
+
+backend:
+  name: git-gateway
+  branch: main
+  # --- DA COMPLETARE durante la messa online (vedi LEGGIMI.md, passo 4) ---
+  # DecapBridge ti mostra le righe esatte da incollare qui, di solito così:
+  # repo: TUO-UTENTE-GITHUB/serenissima-sito
+  # identity_url: https://auth.decapbridge.com/sites/XXXXXXXX
+  # gateway_url: https://gateway.decapbridge.com
+  commit_messages:
+    create: "Nuovo: {{slug}}"
+    update: "Aggiornato: {{slug}}"
+    delete: "Eliminato: {{slug}}"
+    uploadMedia: "Foto caricata: {{path}}"
+    deleteMedia: "Foto eliminata: {{path}}"
+
+locale: it
+site_url: https://www.serenissimaonline.it
+display_url: https://www.serenissimaonline.it
+logo_url: https://www.serenissimaonline.it/theme-inc/img/logo-serenissima-immobiliare.png
+
+media_folder: img/uploads
+public_folder: img/uploads
+
+editor:
+  preview: false
+
+collections:
+  - name: immobili
+    label: "🏠 Immobili"
+    description: "Qui aggiungi, modifichi o togli gli immobili del sito. Quando hai finito premi «Pubblica» in alto."
+    files:
+      - name: elenco
+        label: "Elenco immobili"
+        file: data/immobili.json
+        fields:
+          - name: immobili
+            label: "Immobili"
+            label_singular: "immobile"
+            widget: list
+            add_to_top: true
+            collapsed: true
+            summary: "{{fields.titolo}} · {{fields.tipo}} · {{fields.zona}}"
+            hint: "Il primo dell'elenco appare per primo sul sito. Per cambiare l'ordine, trascina un immobile tenendo premuti i puntini a sinistra."
+            fields:
+              - { name: titolo, label: "Nome dell'immobile", widget: string, hint: "Es. Airone 51" }
+              - name: tipo
+                label: "È in affitto o in vendita?"
+                widget: select
+                default: affitto
+                options:
+                  - { label: "Affitto", value: affitto }
+                  - { label: "Vendita", value: vendita }
+                  - { label: "Attività commerciale", value: attivita }
+              - name: zona
+                label: "Zona"
+                widget: select
+                default: "Piazza Marina"
+                options: ["Piazza Marina", "Piazza Nember", "Piazza Torino", "Piazza Aurora", "Piazza Mazzini", "Pineta", "Faro", "Jesolo Lido"]
+              - { name: visibile, label: "Mostra sul sito", widget: boolean, default: true, hint: "Spegni per nasconderlo senza cancellarlo (es. già affittato)." }
+              - { name: foto, label: "Foto", label_singular: "foto", widget: list, field: { name: src, label: "Foto", widget: image }, hint: "La prima foto è quella di copertina." }
+              - { name: sottotitolo, label: "Frase breve", widget: string, required: false, hint: "Es. Attico fronte mare al 13° piano" }
+              - { name: prezzo, label: "Prezzo", widget: string, required: false, default: "Prezzo su richiesta", hint: "Es. € 250.000 — oppure — da € 600 a settimana" }
+              - { name: fronte_mare, label: "Fronte mare", widget: boolean, default: false }
+              - { name: posti_letto, label: "Posti letto", widget: number, value_type: int, min: 0, required: false }
+              - { name: camere, label: "Camere", widget: number, value_type: int, min: 0, required: false }
+              - { name: bagni, label: "Bagni", widget: number, value_type: int, min: 0, required: false }
+              - { name: mq, label: "Metri quadri", widget: string, required: false }
+              - { name: caratteristiche, label: "Caratteristiche", widget: list, required: false, hint: "Scrivile separate da una virgola. Es. Terrazza vista mare, Aria condizionata, Posto auto" }
+              - { name: descrizione, label: "Descrizione", widget: text, required: false, hint: "Scrivi liberamente. Vai a capo per iniziare un nuovo paragrafo." }
+
+  - name: agenzia
+    label: "⚙️ Dati dell'agenzia"
+    description: "Telefono, orari, avvisi e foto in alto. Di solito non serve toccarli."
+    files:
+      - name: dati
+        label: "Contatti, orari e foto"
+        file: data/agenzia.json
+        fields:
+          - { name: avviso, label: "Avviso in cima al sito", widget: string, required: false, hint: "Es. «Chiusi per ferie fino al 10 gennaio». Lascia vuoto per non mostrare nulla." }
+          - { name: telefono, label: "Telefono", widget: string }
+          - { name: email, label: "Email", widget: string }
+          - { name: indirizzo, label: "Indirizzo", widget: string }
+          - { name: orari, label: "Orari (pagina contatti)", widget: text }
+          - { name: orari_breve, label: "Orari (una riga, in alto)", widget: string }
+          - { name: foto_copertina, label: "Foto grandi in alto", label_singular: "foto", widget: list, field: { name: src, label: "Foto", widget: image } }
+          - name: vetrina
+            label: "Progetto in vetrina (riquadro blu)"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: mostra, label: "Mostra il riquadro", widget: boolean, default: true }
+              - { name: etichetta, label: "Etichetta piccola", widget: string, required: false }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: testo, label: "Testo", widget: text }
+              - { name: foto, label: "Foto", widget: image, required: false }
+              - { name: badge, label: "Scritta sulla foto", widget: string, required: false }
+              - name: punti
+                label: "Punti di forza"
+                label_singular: "punto"
+                widget: list
+                fields:
+                  - { name: titolo, label: "Titolo", widget: string }
+                  - { name: testo, label: "Testo", widget: string }
+          - { name: nome, label: "Nome agenzia", widget: string }
+          - { name: logo, label: "Logo", widget: image }
+          - { name: piva, label: "Partita IVA", widget: string, required: false }
+          - { name: privacy_url, label: "Link pagina privacy", widget: string, required: false }
+          - { name: cookie_url, label: "Link cookie policy", widget: string, required: false }
+          - { name: condizioni_affitto_url, label: "Link condizioni d'affitto", widget: string, required: false }
+          - { name: newsletter_url, label: "Link iscrizione newsletter", widget: string, required: false, hint: "Lascia vuoto per nascondere il riquadro newsletter." }
